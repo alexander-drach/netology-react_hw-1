@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 export function ShopItemFunc(props) {
     const { item } = props;
     item.price = (item.price).toFixed(2);
@@ -17,4 +18,13 @@ export function ShopItemFunc(props) {
             </div>
         </div>
     );
+}
+
+ShopItemFunc.propTypes = {
+  brand: propTypes.string,
+  title: propTypes.string,
+  description: propTypes.string,
+  descriptionFull: propTypes.string,
+  price: propTypes.number,
+  currency: propTypes.string
 }
