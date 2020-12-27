@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import { ShopItemFunc } from './components/ShopItemFunc';
+import { ShopItemClass } from './components/ShopItemClass';
 
 const item = {
   brand: 'Tiger of Sweden',
@@ -15,6 +17,7 @@ const item = {
 }
 
 ReactDOM.render(
+  <React.Fragment>
   <div className="container">
     <div className="background-element">
     </div>
@@ -24,7 +27,19 @@ ReactDOM.render(
     <div className="window">
       <ShopItemFunc item={item} />
     </div>
-  </div>,
+  </div>
+
+  <div className="container">
+    <div className="background-element">
+    </div>
+    <div className="highlight-window">
+      <div className='highlight-overlay'></div>
+    </div>
+    <div className="window">
+      <ShopItemClass item={item} />
+    </div>
+  </div>
+  </React.Fragment>,
   document.getElementById('root')
 );
 

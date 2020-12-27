@@ -1,8 +1,11 @@
+import React, { Component} from 'react';
 import propTypes from 'prop-types';
-export function ShopItemFunc(props) {
-    const { item } = props;
-    item.price = (item.price).toFixed(2);
-    return (
+
+export class ShopItemClass extends Component {   
+
+    render() {
+       const { item } = this.props;
+       return (
         <div class="main-content">
             <h2>{item.brand}</h2>
             <h1>{item.title}</h1>
@@ -17,10 +20,11 @@ export function ShopItemFunc(props) {
                 <button>Добавить в корзину</button>
             </div>
         </div>
-    );
+    ); 
+    }    
 }
 
-ShopItemFunc.propTypes = {
+ShopItemClass.propTypes = {
   brand: propTypes.string,
   title: propTypes.string,
   description: propTypes.string,
